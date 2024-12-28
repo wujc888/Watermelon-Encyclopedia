@@ -306,8 +306,7 @@ void Watermelon::getnew(){
 	cout<<"更新软件：\n1. https://github.com/wujc888/Watermelon-Encyclopedia\n2. https://github.com/wujc888/Watermelon-Encyclopedia"<<endl; 
 	cout<<"-------------------------------------------------\n";
 }
-void Watermelon::pwt(){
-	system("cls");	
+void Watermelon::pwt(){	
 	int a[110]={0};
 	srand(time(0));
 	int b=rand()%(5-2+1)+2,n;
@@ -315,15 +314,24 @@ void Watermelon::pwt(){
 	if(x%b==0){
 		x++;
 	} 
-	
+	bool a1=false;
+	while(!a1){
+	int b=rand()%(5-2+1)+2,n;
+	int x=rand()%(8-1+1)+1;	
+	if(x%b==0){
+		x++;
+	} 	
+	system("cls");	
 	cout<<"欢迎来玩猪八戒吃西瓜游戏！\n游戏规则：请输入一个正整数，这个数代表西瓜的个数。猪八戒会走"<<b<<"步去吃西瓜。西瓜的编号从‘1’开始排序，呈环形摆放，首尾相接。\n如果你能保护好"<<x<<"号金西瓜，那么你就赢了！\n";
 	cout<<"说明：猪八戒从刚刚吃掉的西瓜开始走，走"<<b<<"步后才是要吃的西瓜。\n注意：\n1. 第一次是从西瓜环外跨到‘1’号西瓜，记作1步。\n2. 输入的数要比"<<x<<"大，否则本题作废。\n"; 
 	cout<<"请输入西瓜的个数：";
 	cin>>n;
 	if(n<x){
-	cout<<"输入错误，本题作废！\n";
-	n=1;
-	a[x]=-1;
+	cout<<"\n输入错误!错误原因：输入的数比"<<x<<"小。\n本题作废！\n";
+	Sleep(4000);
+	continue;
+	}else
+	a1=true;
 }
 	int cnt=0,i=0,k=0,c=1;  //cnt表示目前出局的人数 表示总共有n人，数到数字m时出局 
 	while(cnt!=n-1) //因为要求N个人的出局顺序，因此当cnt（用来统计已经出局的人）未达到n时，需要循环不断报数 
@@ -343,9 +351,7 @@ void Watermelon::pwt(){
 		}
 		
 	}
-	if(a[x]==-1)
-	cout<<endl;
-	else if(a[x]==0){
+	if(a[x]==0){
 	cout<<"恭喜！您保住了金西瓜！\n\n";
 	}else{
 	cout<<"很遗憾，金西瓜被猪八戒吃了\n\n";	
