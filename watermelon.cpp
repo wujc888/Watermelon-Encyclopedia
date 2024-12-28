@@ -303,7 +303,7 @@ void Watermelon::where() {
 }
 void Watermelon::getnew(){
 	system("cls");
-	cout<<"更新软件：\n1. https://github.com/wujc888/Watermelon-Encyclopedia-\n2. https://github.com/wujc888/Watermelon-Encyclopedia-"<<endl; 
+	cout<<"更新软件：\n1. https://github.com/wujc888/Watermelon-Encyclopedia\n2. https://github.com/wujc888/Watermelon-Encyclopedia"<<endl; 
 	cout<<"-------------------------------------------------\n";
 }
 void Watermelon::pwt(){
